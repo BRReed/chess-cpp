@@ -47,5 +47,22 @@ bool ChessRules::in_check(bool is_black, std::unordered_map<int, std::vector<std
 
 bool ChessRules::piece_movement(std::string piece, int cur_coords, int dest_coords)
 {
+    int x1 = cur_coords / 10 % 10;
+    int y1 = cur_coords % 10;
+
+    int x2 = dest_coords / 10 % 10;
+    int y2 = dest_coords % 10;
+    
+    if (piece == "k")
+    {
+        if (std::abs(x1 - x2) <= 1 && std::abs(y1 - y2) <= 1)
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
+    }
+
     return false;
 }
