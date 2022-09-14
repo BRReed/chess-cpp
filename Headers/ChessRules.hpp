@@ -24,11 +24,15 @@ public:
 
     bool check_promotion(bool is_black, std::unordered_map<int, std::vector<std::string>> board_state);
 
-    bool check_castling(bool is_black, std::string side, std::unordered_map<int, 
-                        std::vector<std::string>> board_state);
+    bool check_castling(bool is_black, 
+                        std::string side, 
+                        std::unordered_map<int, std::vector<std::string>> board_state);
 
-    bool block_check(bool is_black, std::string side, std::unordered_map<int, 
-                     std::vector<std::string>> board_state);
+    bool block_check(bool is_black, 
+                     std::string side, 
+                     std::unordered_map<int, std::vector<std::string>> board_state);
+    
+    bool calc_move(int x1, int y1, int x2, int y2, int x_mov, int y_mov);
 
 };
 
