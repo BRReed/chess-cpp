@@ -63,3 +63,8 @@ bool ChessRules::piece_movement(std::string piece, int cur_coords, int dest_coor
 
     return false;
 }
+
+bool ChessRules::calc_move(int x1, int y1, int x2, int y2, int x_mov, int y_mov)
+{
+    return false;
+}
