@@ -2,20 +2,17 @@
 
 
 
-ChessRules::ChessRules()
-{
-
-}
-
-bool ChessRules::block_check(bool is_black, std::string side, std::unordered_map<int, 
-                             std::vector<std::string>> board_state)
+bool ChessRules::block_check(bool is_black, 
+                             std::string side, 
+                             std::unordered_map<int, std::vector<std::string>> board_state)
 {
     return false;
 }
 
 
-bool ChessRules::check_castling(bool is_black, std::string side, std::unordered_map<int, 
-                                std::vector<std::string>> board_state)
+bool ChessRules::check_castling(bool is_black, 
+                                std::string side, 
+                                std::unordered_map<int, std::vector<std::string>> board_state)
 {
     return false;
 }
