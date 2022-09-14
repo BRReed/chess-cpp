@@ -4,36 +4,42 @@
 #include<vector>
 #include<unordered_map>
 
-class ChessRules
-{
+class ChessRules {
 private:
 
 
 public:
-    ChessRules();
-    
-    bool in_check(bool is_black, std::unordered_map<int, std::vector<std::string>> board_state);
+  ChessRules();
 
-    bool check_mate(bool is_black, std::unordered_map<int, std::vector<std::string>> board_state);
+  bool in_check(
+      bool is_black,
+      std::unordered_map<int, std::vector<std::string>> board_state);
 
-    bool check_stalemate(bool is_black, std::unordered_map<int, std::vector<std::string>> board_state);
+  bool check_mate(
+      bool is_black,
+      std::unordered_map<int, std::vector<std::string>> board_state);
 
-    bool piece_movement(std::string piece, int cur_coords, int dest_coords);
+  bool check_stalemate(
+      bool is_black,
+      std::unordered_map<int, std::vector<std::string>> board_state);
 
-    bool check_en_passant(bool is_black, int cur_coords, int dest_coords);
+  bool piece_movement(std::string piece, int cur_coords, int dest_coords);
 
-    bool check_promotion(bool is_black, std::unordered_map<int, std::vector<std::string>> board_state);
+  bool check_en_passant(bool is_black, int cur_coords, int dest_coords);
 
-    bool check_castling(bool is_black, 
-                        std::string side, 
-                        std::unordered_map<int, std::vector<std::string>> board_state);
+  bool check_promotion(
+      bool is_black,
+      std::unordered_map<int, std::vector<std::string>> board_state);
 
-    bool block_check(bool is_black, 
-                     std::string side, 
-                     std::unordered_map<int, std::vector<std::string>> board_state);
-    
-    bool calc_move(int x1, int y1, int x2, int y2, int x_mov, int y_mov);
+  bool check_castling(
+      bool is_black,
+      std::string side,
+      std::unordered_map<int, std::vector<std::string>> board_state);
 
+  bool block_check(
+      bool is_black,
+      std::string side,
+      std::unordered_map<int, std::vector<std::string>> board_state);
 };
 
 #endif //CHESS_RULES_HPP
