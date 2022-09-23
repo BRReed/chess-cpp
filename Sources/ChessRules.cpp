@@ -92,6 +92,20 @@ bool ChessRules::piece_movement(std::string piece, int cur_coords,
     if (x1 == x2 || y1 == y2) {
       return true;
     }
+  // white pawn movement definitions
+  } else if (piece == "wp") {
+    if (y2 - y1 == 1 && std::abs(x2 - x1) <= 1) {
+      return true;
+    } else if (y1 == 2 && std::abs(y2 - y1) == 2 && x1 == x2) {
+      return true;
+    }
+  // black pawn movement definitions
+  } else if (piece == "bp") {
+    if (y1 - y2 == 1 && std::abs(y1 - y2) <= 1) {
+      return true;
+    } else if (y1 == 7 && std::abs(y1 - y2 == 2 && x1 == x2)){
+      return true;
+    }
   }
 
   return false;
