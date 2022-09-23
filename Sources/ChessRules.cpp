@@ -64,12 +64,33 @@ bool ChessRules::piece_movement(std::string piece, int cur_coords,
 
   int x_mov;
   int y_mov;
-
+  // king movement definitions
   if (piece == "k") {
     if (std::abs(x1 - x2) <= 1 && std::abs(y1 - y2) <= 1) {
       return true;
-    } else {
-      return false;
+    }
+  // queen movement definitions
+  } else if (piece == "q") {
+    if (x1 == x2 || y1 == y2) {
+      return true;
+    } else if (std::abs(x1 - x2) == std::abs(y1 - y2)) {
+      return true;
+    }
+  // bishop movement definitions
+  } else if (piece == "b") {
+    if (std::abs(x1 - x2) == std::abs(y1 - y2)) {
+      return true;
+    }
+  // knight movement definitions
+  }  else if (piece == "n") {
+    if ((std::abs(x1 - x2) == 1 && std::abs(y1 - y2) == 2) ||
+        (std::abs(x1 - x2) == 2 && std::abs(y1 - y2) == 1)) {
+      return true;
+        }
+  // rook movement definitions
+  } else if (piece == "r") {
+    if (x1 == x2 || y1 == y2) {
+      return true;
     }
   }
 
